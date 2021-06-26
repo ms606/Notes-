@@ -1,0 +1,34 @@
+              APPLICATION LEVEL WORKFLOW
+
+Step 1: Define requirements and standards.
+    a. Naming conventions and coding standards.
+    b. How to write and where to write SQL statements in PL.
+    c. Error management.
+
+Step 2: Build the application foundation.
+    a. Formalize a process that supports the rules to be followed.
+    b. Automate the implementation of rules. 
+RULES ARE ABOVE MENTIONS IN STEP 1.
+
+Step 3: Build the application iterations.
+    Build small individual working programs.
+
+Step 4: Validate the application iterations.
+    a. Successful applications meets user requirements.
+      Regression tests for the code and QA.
+    b. Successful applications are maintainable.
+      Check coding standards, combine peer reviews.
+    c. Check the performance of entire application.
+
+Depending on the source of the problem, we must then go back and “do it again.”
+
+             SINGLE-PROGRAM CONSTRUCTIION WORKFLOW
+How to write an individual program, procedure or a function.
+
+Summary first:
+1. Prepare for program construction.
+2. Build an iteration of the program.
+3. Test the program iteration.
+4. Trace the execution of the program.
+5. Debug the program.
+6. Validate the program: optimize and review.

@@ -1,0 +1,25 @@
+1. Don't use function in where columns. It will run function against each and
+every record & the index on that column will be void.
+
+2. Use "case" instead of multiple unions if it is applied on one table.
+
+3. Generally try avoiding the distinct function as it is an expensive & there
+might be some issue in the query.
+
+4. Redesign the fixed data values in the query to dynamic data from table.
+
+5. Use union all instead of union as union performs an extra step to remove
+the duplicate columns and union all doesn't do that so it is faster.
+
+6. Just for tuning the queries use table aliases.
+
+7. Only use having on aggregate function, where clause filters row before the
+aggregate function, and the having clause filters rows after the aggregate functions
+are applied. Example
+                    SELECT status, COUNT(*)
+                    FROM product
+                    WHERE status IS NOT NULL
+                    GROUP BY status
+                    HAVING COUNT(*) > 1;
+Only use HAVING on aggregate functions and use WHERE on results you want to restrict
+before the aggregate.
