@@ -7,7 +7,7 @@ Step 1: Define requirements and standards.
 
 Step 2: Build the application foundation.
     a. Formalize a process that supports the rules to be followed.
-    b. Automate the implementation of rules. 
+    b. Automate the implementation of rules.
 RULES ARE ABOVE MENTIONS IN STEP 1.
 
 Step 3: Build the application iterations.
@@ -32,3 +32,11 @@ Summary first:
 4. Trace the execution of the program.
 5. Debug the program.
 6. Validate the program: optimize and review.
+
+Understand the EXPLAIN plans.
+
+Four Steps of preparing an application:
+1. Validate Requirements: Know what you are supposed to build.
+2. Construct Header: Think about the interface, not the implementation.
+3. Define Tests: How will you know when you are done?
+4. Build a test code.
