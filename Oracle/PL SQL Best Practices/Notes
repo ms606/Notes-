@@ -40,3 +40,27 @@ Four Steps of preparing an application:
 2. Construct Header: Think about the interface, not the implementation.
 3. Define Tests: How will you know when you are done?
 4. Build a test code.
+
+Take a break after 30 minutes on a problem.
+
+Find same pattern of in the program then generate a code and pass only
+dynamic values.
+
+Book recommendation for taking care of the host body:
+1. Drink lots of water, instead of coffee, coke.... etc.
+2. Take lots of break, move around, get exercise and go outside.
+3. Make sure your workspace is comfortable and ergonomic.
+
+Recommendation for conventions:
+1.Identify the scope of a variable in its name:
+   A global variable can be prefaced with g_ , for example.
+2.Use a prefix or suffix to identify the types of structures being defined:
+   Consider, for example, declarations of TYPEs: of collections, objects, records,
+   REF cursors, etc. A standard approach to declaring such a structure is <name>_t.
+   Types are quite different from variables; you should be able to identify the
+   difference with a glance.
+3.Use a readable format for your names:
+  Since PL/SQL is not case-sensitive, camel notation (as in minBalanceRequired)
+  is probably not a good choice for constructing names. Instead, use separators
+  such as _ (underscore) to improve readability (as in min_balance_required).
+4. Name procedure with the verb phrases, and functions with noun phases.
