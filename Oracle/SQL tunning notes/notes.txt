@@ -23,3 +23,7 @@ are applied. Example
                     HAVING COUNT(*) > 1;
 Only use HAVING on aggregate functions and use WHERE on results you want to restrict
 before the aggregate.
+
+8. Always Specify Columns in INSERT Statements.
+
+9. Avoid object name with spaces.

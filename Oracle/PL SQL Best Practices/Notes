@@ -64,3 +64,33 @@ Recommendation for conventions:
   is probably not a good choice for constructing names. Instead, use separators
   such as _ (underscore) to improve readability (as in min_balance_required).
 4. Name procedure with the verb phrases, and functions with noun phases.
+
+What happens when we don't do the testing:
+ The users find tons of bugs and after a while they find themselves muttering,
+ “Those programmers aren’t so smart, and they don’t even seem to be very good at
+  their jobs.”
+ And that’s when users stop treating programmers like wizards, like special people.
+
+Everyone’s always in a hurry, but we all know that doing things in a hurry doesn’t
+really save time—it just shifts where the time is spent.
+
+* If your variable holds data that is coming from a table or a cursor, use %TYPE
+or %$ROWTYPE to declare that variable.
+
+* You can avoid using globals, and uncontrolled modifications to globals, in a
+number of ways:
+ 1. Pass the global as a parameter in your procedures and functions:
+    Don’t reference it directly within the program (circumventing the structure
+    and visibility of the parameter list).
+ 2. Declare variables, cursors, functions, and other objects as “deeply” as possible:
+    That would be in the block nearest to where, or within which, that object will
+    be used). Doing this will reduce the chance of unintended use by other
+    sections of the code.
+ 3. Hide your package data behind “gets and sets”:
+    These are subprograms that control access to the data. This approach is
+    covered in the next best practice.
+ 4. Scope declarations as locally as possible:
+    If your variable is used only in a single subprogram, declare it there. If it
+    needs to be shared among multiple programs in a package body, declare it at
+    the package level (but never put the declaration in the package specification).
+     
