@@ -1,0 +1,4 @@
+1. Fragments:
+  Common thing in react component is to return one or more than one elements,
+  Here fragments let you group a list of children without adding extra nodes to DOM.
+  i.e. <React.Fragments></React.Fragments> OR "<></>"
