@@ -1,0 +1,40 @@
+DYNAMIC SQL:
+ It enables you to write programs jo reference SQL statements, jis ki sari cheezein runtime tk pata nhe hoti.
+ Few example:
+  1. Data warehousing application where we know the tables later.
+  2. Sorting clauses.
+  3. Applications that query a database where the data definition of the tables
+  are constantly changing.
+  4. Applications where the new tables are often created.
+
+Use EXECUTE IMMEDIATE syntax to run the query in DYNAMIC SQL STATEMENTS.
+-----------------------------------------------------------------------------------------------------------------------------
+Example in the article which was used was something like this:
+
+The database in this scenario is a company's human resources database (named hr) with the following data model:
+
+A master table named offices contains the list of all company locations. The offices table has the following definition:
+
+Column Name          Null?          Type
+LOCATION             NOT_NULL       VARCHAR2(200)
+
+Multiple emp_location tables contain the employee information, where location is
+the name of city where the office is located. For example, a table named emp_houston
+contains employee information for the company's Houston office, while a table named emp_boston
+contains employee information for the company's Boston office.
+
+Each emp_location table has the following definition:
+
+Column Name          Null?          Type
+EMPNO                NOT_NULL       NUMBER(4)
+ENAME                NOT_NULL       VARCHAR2(10)
+JOB                  NOT_NULL       VARCHAR2(9)
+SAL                  NOT_NULL       NUMBER(7,2)
+DEPTNO               NOT_NULL       NUMBER(2)
+---------------------------------------------------------------------------------------------------------------------------
+
+TYPES OF POSSIBLE WAYS TO USE THE PL/SQL PACKAGES.
+1. Native Dynamic SQL, lets us use dynamic sql directly in pl/sql code. These includes
+   DML statements, PL/SQL Blocks, DDL statements, transaction control and session
+   control statements.
+2. DBMS_SQL Package,
