@@ -1,0 +1,17 @@
+PL/SQL programming language consists of data structure called VARRAYS, they
+are like collection of variables of the same type.
+
+
+The basic syntax for creating a VARRAY type at the schema level is −
+----------------------------------------------------------------------------
+CREATE OR REPLACE TYPE varray_type_name IS VARRAY(n) of <element_type>
+
+Where,
+
+    varray_type_name is a valid attribute name,
+    n is the number of elements (maximum) in the varray,
+    element_type is the data type of the elements of the array.
+----------------------------------------------------------------------------
+
+1. In oracle env the starting of varray is from 1.
+2. Varrays are one-dimensional arrays.
