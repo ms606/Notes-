@@ -1,0 +1,34 @@
+Explain Plan: we pass the sql statement to the server (CBO) Cost Based Optimizer
+  which uses databases statistics
+
+A statement's exec. plan is the sequence of operation Oracle performs to run the
+statement.
+
+A row source tree shows all the of the execution plan, like tables kis hisab say
+order huwe hain, ya access method for tables, join methods, data operation like
+filter, sort or aggregation.
+
+--------------------------------------------------------------------------------
+The EXPLAIN PLAN results let you determine whether the optimizer
+selects a particular execution plan, such as, nested loops join.
+It also helps you to understand the optimizer decisions, such as why the
+optimizer chose a nested loops join instead of a hash join, and lets you
+understand the performance of a query.
+--------------------------------------------------------------------------------
+
+Main goal is to look for throw aways & Minimizing them
+In cases such as the following:
+
+    Full scans
+    Unselective range scans
+    Late predicate filters
+    Wrong join order
+    Late filter operations
+
+**********************
+The execution plan operation alone cannot differentiate between well-tuned
+statements and those that perform poorly.
+It is best to use EXPLAIN PLAN to determine an access plan, and then later prove
+that it is the optimal plan through testing. When evaluating a plan, examine the
+statement's actual resource consumption. Use Oracle Trace or the SQL trace facility
+and TKPROF to examine individual SQL statement performance.
