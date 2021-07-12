@@ -1,0 +1,41 @@
+HASH TABLE IN ORACLE: A hash table is a table where you can store stuff by the
+use of a key. It is like an array but stores things differently.
+E.g.
+  ~ a('CanBeVarchar') := 1; -- A hash table
+
+Hash joins are used when joining the large tables ya when the join requires the
+maximum joined table rows.
+
+Algo for oracle hash join
+
+* There are two tables involved.
+    1."SMALL TABLE IS CALLED BUILD TABLE.
+    2.LARGER TABLE IS CALLED PROBE TABLE."
+
+1. The optimizer uses smaller of the 2 tables to build a hash table inside the
+memory.
+
+    Build phase:
+      For each row in small table loop
+      Calculate hash value on join key
+      Insert row in appropriate hash bucket.
+      End loop;
+
+2. Then scans the large tables and compares the hash value (rows from the large table)
+with this hash table to find the joined rows.
+
+    Probe Phase:
+      For each row in big table loop
+      Calculate the hash value on join key
+      Probe the hash table for hash value
+      If match found
+      Return rows
+      End loop;
+
+
+
+--------------------------------------------------------------------------------
+Cost of the hash Join =
+  Cost of the read of table A +
+  cost of the read table B +
+  some little processing in memory
