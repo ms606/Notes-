@@ -1,0 +1,21 @@
+ccording to the CPU costing model:
+
+Cost =  (#SRds * sreadtim +
+         #MRds * mreadtim +
+         #CPUCycles / cpuspeed ) / sreadtim
+
+where:
+
+    #SRDs is the number of single block reads
+    #MRDs is the number of multi block reads
+    #CPUCycles is the number of CPU Cycles *)
+    sreadtim is the single block read time
+    mreadtim is the multi block read time
+    cpuspeed is the CPU cycles per second
+
+CPUCycles includes CPU cost of query processing (pure CPU cost) and CPU cost of
+data retrieval (CPU cost of the buffer cache get).
+
+This model is straightforward for serial execution. For parallel execution,
+necessary adjustments are made while computing estimates for #SRD, #MRD, and
+#CPUCycles.
