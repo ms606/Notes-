@@ -1,0 +1,5 @@
+The concept is the whole global state of your app is stored in an
+object tree inside a single store. The tree inside a single store
+change hosakti hai dispatch call ker k jismey hum actions (an object
+describing what happened). State update kerney k lye we write pure
+reducer functions.
