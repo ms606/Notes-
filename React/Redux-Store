@@ -1,1 +1,43 @@
-It is 
+It is a store that holds a state tree of your application.
+The way to change the state is to dispatch an action on it.
+
+REDUCER:
+  or reducing function is a function that accepts an accumulation and a
+  value and returns a new accumulation.
+    --accumulated value is the state object
+
+    .: type Reducer<S, A> = (state: S, action: A) => S
+
+STORE METHODS:
+1. getState(): Jo bhi last value returned by store's reducer, or
+  returns the current state tree of your application.
+
+2. dispatch(action): Only way to trigger a state change.
+
+
+.: createStore(reducer, [preloadedState], [enhancer])
+
+1. reducer: koyi function, combine reducer pass ker saktay hain, kind of a complete state
+tree pass hogi
+
+2. [preloadedState]: yahan pass hoti hai koyi bhi initial state, yahan
+woh data pass kersaktay hain jo server say initilize kerwaya ho ya koyi
+local session sey data call kerwa k pass ker saktay hain e.g. user session,
+session details, cart items ya shipping addresses. etc etc.
+
+3. [enhancer]: apni marzi k hisab say add third party capabilites such as middleware,
+time travel, persistence, etc. Jo enhancer redux k sath ship hota hai woh
+applyMiddleware() hai.
+
+4. Store enhancer: it is a formal mechanism for adding capabilites to redux itself.
+
+5. combineReducers(reducers): It is the helper function that turns an object
+jis ki mutliple reducing functions hain into a single reducing function jo
+phr pass hota hai createStore mai.
+
+  Yeh is tarhan kaam kerta hai it call all the child reducer, sb ka data ek single
+state object mai.
+
+RETURNS:
+ It invokes all the reducers inside the reducer object, and constructs a state
+ object that returns a state object with the same shape.
