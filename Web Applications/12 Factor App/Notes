@@ -1,2 +1,5 @@
 3. Config:
-  
+    Woh sari variations between deploys mai hongi (staging, production, dev env. etc).
+      * Resource handling to the database, memcached & other backing services.
+      * Credentials to external services such as Amazon s3 or twitter etc.
+      * Per-deploy values such as the hostname for deployment.
