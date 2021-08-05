@@ -1,5 +1,32 @@
+1. Codebase:
+   A codebase is any single repo (in a centralized revision control system like
+   Subversion), or any set of repos who share a root commit (in a decentralized
+   revision control system like Git).
+
+   Note: If there are multiple codebases, it’s not an app – it’s a distributed
+   system. Each component in a distributed system is an app, and each can
+   individually comply with twelve-factor.
+
+   Multiple apps sharing the same code is a violation of twelve-factor.
+   The solution here is to factor shared code into libraries which can be
+   included through the dependency manager.
+
 3. Config:
     Woh sari variations between deploys mai hongi (staging, production, dev env. etc).
       * Resource handling to the database, memcached & other backing services.
       * Credentials to external services such as Amazon s3 or twitter etc.
       * Per-deploy values such as the hostname for deployment.
+
+4. Backing services:
+    Isme woh sari services ati hain jo app use kerti hai over the network communication
+    as a normal operation. E.g. datastores (such as MySQL or CouchDB),
+    messaging/queueing systems (such as RabbitMQ or Beanstalkd),
+    SMTP services for outbound email (such as Postfix), and caching systems
+    (such as Memcached).
+
+    When we deploy and 12 factor app we can change the backend from on db to another
+    eg. MySQL to Amazon or local SMTP server can be swapped with a third party
+    SMTP service, without any changes to the app's code.
+
+    Each distinct backing service is a resource, if a two MySQL db ( for sharding
+    at the application layer) they will be count as two distinct resources.
